@@ -14,7 +14,8 @@ Ext.define('TestApp.view.main.Main', {
 
         'TestApp.view.main.MainController',
         'TestApp.view.main.MainModel',
-        'TestApp.view.main.List'
+        'TestApp.view.main.List',
+        'TestApp.view.main.List1'
     ],
 
     controller: 'main',
@@ -41,9 +42,11 @@ Ext.define('TestApp.view.main.Main', {
         },{
             title: 'Users',
             iconCls: 'x-fa fa-user',
-            bind: {
-                html: '{loremIpsum}'
-            }
+            layout: 'fit',
+            // The following grid shares a store with the classic version's grid as well!
+            items: [{
+                xtype: 'mainlist1'
+            }]
         },{
             title: 'Groups',
             iconCls: 'x-fa fa-users',
